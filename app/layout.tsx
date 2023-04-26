@@ -1,5 +1,6 @@
 import './globals.css'
 import Header from './components/header/header'
+import Footer from './components/footer/footer'
 
 export const metadata = {
   title: 'TBVH | To Be Very Honest',
@@ -14,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="mytheme">
       <body className="bg-white">
-        
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
