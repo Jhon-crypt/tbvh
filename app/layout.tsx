@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="mytheme">
-      <body>
+      <body className="bg-white">
         
         <Header />
         {children}
