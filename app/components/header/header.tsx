@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { FaGhost } from "react-icons/fa"
 import { BiLogIn, BiUserCircle } from "react-icons/bi"
 
@@ -14,9 +15,9 @@ export default function Header(){
                 <FaGhost className="text-primary text-2xl" />
               </label>
               <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-white text-black rounded-box w-52">
-                <li><a>Homepage</a></li>
-                <li><a>Portfolio</a></li>
-                <li><a>About</a></li>
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/signup">Signup</Link></li>
+                <li><Link href="/login">Login</Link></li>
               </ul>
             </div>
           </div>

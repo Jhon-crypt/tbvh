@@ -4,7 +4,7 @@ export default function SignupForm(){
 
         <>
         
-        <section className="py-16 xl:pb-56 bg-white overflow-hidden">
+            <section className="py-16 xl:pb-56 bg-white overflow-hidden">
                 <div className="container px-4 mx-auto">
                     <div className="text-center max-w-md mx-auto">
                         <h2 className="mb-4 text-6xl md:text-7xl text-center font-bold font-heading tracking-px-n leading-tight text-black">Join for free</h2>
