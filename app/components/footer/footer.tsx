@@ -1,3 +1,5 @@
+import { FaGhost } from "react-icons/fa"
+
 export default function Footer() {
 
     return (
@@ -10,6 +12,7 @@ export default function Footer() {
                     <div className="flex flex-wrap justify-between items-center -m-8">
                         <div className="w-auto p-8">
                             <a className="normal-case text-3xl font-extrabold">
+                                <FaGhost className="text-primary"/>
                                 <b><span className="text-primary">T</span>
                                     <span className="text-secondary">B</span>
                                     <span className="text-accent">V</span>
