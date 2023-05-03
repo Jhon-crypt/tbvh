@@ -34,11 +34,11 @@ export default function Header(){
           </div>
           <div className="navbar-end">
             <button className="btn btn-ghost btn-circle">
-              <BiLogIn className="text-black text-2xl" />
+              <Link href="/login"><BiLogIn className="text-black text-2xl" /></Link>
             </button>
             <button className="btn btn-ghost btn-circle">
               <div className="indicator">
-                <BiUserCircle className="text-black text-2xl" />
+                <Link href="signup"><BiUserCircle className="text-black text-2xl" /></Link>
               </div>
             </button>
           </div>

@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function CallToAction() {
 
     return (
@@ -12,9 +14,11 @@ export default function CallToAction() {
                         </h2>
                         <p className="mb-7 text-lg text-gray-600 font-medium">Sign up now and unleash your curiosity!.</p>
                         <div className="mb-11 md:inline-block">
-                            <button className="py-4 px-6 w-full text-white font-semibold rounded-xl bg-neutral hover:bg-neutral-focus transition ease-in-out duration-200" type="button">
-                                Get started now
-                            </button>
+                            <Link href="/signup">
+                                <button className="py-4 px-6 w-full text-white font-semibold rounded-xl bg-neutral hover:bg-neutral-focus transition ease-in-out duration-200" type="button">
+                                    Get started now
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

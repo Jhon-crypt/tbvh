@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BiLogIn, BiUserCircle } from "react-icons/bi"
+import Link from "next/link"
 
 export default function IntroHero() {
 
@@ -26,6 +27,7 @@ export default function IntroHero() {
                             <div className="flex flex-wrap -m-2.5 mb-20">
                                 <div className="w-full md:w-auto p-2.5">
                                     <div className="block">
+                                        <Link href="/login">
                                         <button className="py-4 px-6 w-full text-white font-semibold rounded-xl bg-neutral">
                                             <div className="flex flex-wrap justify-center items-center -m-1">
                                                 <div className="w-auto p-1">
@@ -36,10 +38,12 @@ export default function IntroHero() {
                                                 </div>
                                             </div>
                                         </button>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="w-full md:w-auto p-2.5">
                                     <div className="block">
+                                        <Link href="/signup">
                                         <button className="py-4 px-9 w-full font-semibold rounded-xl bg-secondary text-white" type="button">
                                             <div className="flex flex-wrap justify-center items-center -m-1">
                                                 <div className="w-auto p-1">
@@ -50,6 +54,7 @@ export default function IntroHero() {
                                                 </div>
                                             </div>
                                         </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
