@@ -14,7 +14,7 @@ export default function EmptyHero(){
 
                             <div className="w-full md:flex-1 p-2">
                                 
-                                <button className="py-4 px-6 w-full text-white font-semibold rounded-xl bg-stone-400 hover:bg-primary">
+                                <button className="mx-5 py-4 px-6 w-fit text-white font-semibold rounded-xl bg-stone-400 hover:bg-primary">
                                     <div className="flex flex-wrap justify-center items-center -m-1">
                                         <div className="w-auto p-1">
                                             <FaPlusCircle />
@@ -24,14 +24,13 @@ export default function EmptyHero(){
                                         </div>
                                     </div>
                                 </button>
-                                
-
                             </div>
-
                         </div>
                     </div>
                 </div>
             </section>
+
+            <br /><br /><br /><br /><br />
         
         </>
 

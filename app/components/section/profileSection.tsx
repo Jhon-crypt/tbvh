@@ -6,7 +6,7 @@ export default function ProfileSection() {
 
         <>
 
-            <section className="pt-16 bg-blueGray-50">
+            <section className="pt-16 bg-blueGray-50 mb-10">
                 <div className="w-full lg:w-4/12 px-4 mx-auto">
                     <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
                         <div className="px-6">
@@ -19,7 +19,7 @@ export default function ProfileSection() {
                                
                             </div>
                             <div className="text-center mt-12">
-                                <h2 className="text-2xl font-semibold leading-normal mb-2 text-blueGray-700">
+                                <h2 className="text-2xl font-semibold leading-normal mb-2 text-neutral">
                                     <b>Jenna Stones</b>
                                 </h2>
                                 <div className="text-xl leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
@@ -30,7 +30,7 @@ export default function ProfileSection() {
                             <div className="mt-10 py-10 border-t border-blueGray-200 text-center">
                                 <div className="flex flex-wrap justify-center">
                                     <div className="w-full lg:w-9/12 px-4">
-                                        <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
+                                        <p className="mb-4 text-lg leading-relaxed text-blueGray-400">
                                             An artist of considerable range, Jenna the name take
                                         </p>
                                     </div>
