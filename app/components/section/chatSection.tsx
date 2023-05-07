@@ -4,7 +4,7 @@ import { BiGhost, BiShareAlt } from "react-icons/bi"
 import { BsArrowDownCircle } from "react-icons/bs"
 import { AiOutlineDelete } from "react-icons/ai"
 import ChatForm from "../auth/chatForm";
-im
+import ChatBubbleSection from "./chatBubbleSection";
 
 export default function ChatSection() {
 
@@ -12,7 +12,7 @@ export default function ChatSection() {
 
         <>
 
-            <section className="pr-15 pl-10 py-16 bg-white overflow-hidden mb-20">
+            <section className="pr-15 pl-10 py-16 bg-white overflow-hidden mb-20 xl:pb-56">
 
                 <div className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto my-10 max-w-md md:max-w-2xl">
                     <div className="flex items-start px-4 py-6">
@@ -52,7 +52,9 @@ export default function ChatSection() {
 
                             <ChatForm />
 
-                            
+                            <div className="divider"></div>
+
+                            <ChatBubbleSection />
 
                         </div>
                     </div>
