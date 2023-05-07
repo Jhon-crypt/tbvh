@@ -25,7 +25,6 @@ export default function HonestBoxesSection() {
 
                     <div>
 
-
                         <div className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto my-10 w-full md:w-full" style={{
                             overflowWrap: "break-word"
                         }}>
@@ -40,7 +39,7 @@ export default function HonestBoxesSection() {
                                         </div>
                                         <p className="text-gray-700">@user73477666 </p>
                                         <p className="mt-3 text-gray-700 text-sm">
-                                            Lorem ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
+                                            What do you think about the folks in Emerald Hostel
                                         </p>
                                     </Link>
                                     <div className="mt-4 flex items-center">
@@ -69,11 +68,7 @@ export default function HonestBoxesSection() {
                             </div>
                         </div>
 
-
-
                     </div>
-
-
 
                 </div>
 

@@ -1,10 +1,10 @@
 import Link from "next/link"
 import { FaGhost } from "react-icons/fa"
-import { BiCog,BiHomeAlt, BiUserCircle } from "react-icons/bi"
+import { BiCog, BiHomeAlt, BiUserCircle } from "react-icons/bi"
 import { FaPlusCircle } from "react-icons/fa"
 
-export default function Header2(props : 
-    {homeColor : string, createColor : string, profileColor : string}    
+export default function Header2(props:
+    { homeColor: string, createColor: string, profileColor: string }
 ) {
 
 
@@ -32,17 +32,17 @@ export default function Header2(props :
                             <ul className="menu menu-horizontal bg-white-focus rounded-box shadow-lg">
                                 <li>
                                     <Link href="/home">
-                                        <BiHomeAlt className={`text-xl ${props.homeColor}`}/>
+                                        <BiHomeAlt className={`text-xl ${props.homeColor}`} />
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/create">
-                                        <FaPlusCircle className={`text-xl ${props.createColor}`}/>
+                                        <FaPlusCircle className={`text-xl ${props.createColor}`} />
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/profile">
-                                        <BiUserCircle className={`text-xl ${props.profileColor}`}/>
+                                        <BiUserCircle className={`text-xl ${props.profileColor}`} />
                                     </Link>
                                 </li>
                             </ul>
@@ -50,10 +50,19 @@ export default function Header2(props :
                     </a>
                 </div>
                 <div className="navbar-end">
-                
+
                     <button className="btn btn-ghost btn-circle">
                         <div className="indicator">
-                            <Link href="signup"><BiCog className="text-black text-2xl" /></Link>
+                            <div className="dropdown dropdown-bottom dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle">
+                                    <BiCog tabIndex={0} className="text-black text-2xl" />
+                                </label>
+                                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-white 
+                                text-black rounded-box w-52">
+                                    <li><Link href="/">Settings</Link></li>
+                                    <li><Link href="/signup">Log out</Link></li>
+                                </ul>
+                            </div>
                         </div>
                     </button>
 

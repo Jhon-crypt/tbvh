@@ -6,7 +6,7 @@ export default function ProfileSection() {
 
         <>
 
-            <section className="pt-16 bg-blueGray-50 mb-16">
+            <section className="pt-16 bg-blueGray-50 mb-16 xl:pb-56">
                 <div className="w-full lg:w-4/12 px-4 mx-auto">
                     <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
                         <div className="px-6">
