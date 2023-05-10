@@ -33,7 +33,7 @@ export default function SettingsSection() {
 
                             <div className="grid place-content-center mb-3">
 
-                                <Link href="profileSetting">
+                                <Link href="accountSetting">
                                 <div className="collapse border border-secondary bg-white rounded-box shadow-xl text-black">
                                     <div className="collapse-title text-xl font-medium">
                                         Account Settings

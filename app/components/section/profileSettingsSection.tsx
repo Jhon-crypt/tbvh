@@ -56,7 +56,7 @@ export default function ProfileSettingSection() {
                                             <span className="label-text">Update About</span>
                                         </label>
                                         <textarea className="textarea input-bordered input-neutral textarea-neutral mb-3 bg-white" placeholder="Bio"></textarea>
-                                        <button className="btn btn-neutral w-full">Update</button>
+                                        <button className="btn btn-neutral w-full mb-3">Update</button>
                                     </div>
                                 </div>
                                 
