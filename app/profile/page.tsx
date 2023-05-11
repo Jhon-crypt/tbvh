@@ -7,6 +7,7 @@ export default function ProfilePage(){
         <>
         
             <ProfileSection />
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         
         </>
 

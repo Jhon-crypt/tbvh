@@ -12,9 +12,11 @@ export default function ChatSection() {
 
         <>
 
-            <section className="pr-15 pl-10 py-16 bg-white overflow-hidden mb-20 xl:pb-56">
+            <section className="pr-10 pl-10 py-16 bg-white overflow-hidden mb-16">
 
-                <div className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto my-10 max-w-md md:max-w-2xl">
+            <div className="flex bg-white rounded-lg mx-4 md:mx-auto my-10 w-full md:w-full justify-center" style={{
+                            overflowWrap: "break-word"
+            }}>
                     <div className="flex items-start px-4 py-6">
                         <Image className="w-12 h-12 rounded-full object-cover mr-4 shadow" src="/avatar.jpg" alt="avatar" width={100} height={100} />
                         <div className="">

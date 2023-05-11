@@ -7,6 +7,7 @@ export default function ProfileSettingsPage(){
         <>
         
             <ProfileSettingSection />
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         
         </>
 
