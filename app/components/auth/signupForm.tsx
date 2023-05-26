@@ -5,11 +5,57 @@ import React from "react";
 
 export default function SignupForm() {
 
-    const [alert, setAlert] = React.useState(false)
+    const [loading, setLoading] = React.useState(false)
 
-    function handleLogin() {
+    const [signupStatus, setSignupStatus] = React.useState(false)
 
-        setAlert(true);
+    async function handleSubmit(event: any) {
+
+        setLoading(true)
+
+        event.preventDefault()
+
+        const data = {
+            name: String(event.target.name.value),
+            email: String(event.target.email.value),
+            password: String(event.target.password.value)
+        }
+
+        console.log(data)
+
+        const response = await fetch("/api/auth/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+
+            setLoading(false)
+
+            setSignupStatus(true)
+
+            console.log("Submitted form")
+
+            const data = await response.json()
+
+            console.log(data.name)
+
+        } else if (!response.ok) {
+            setLoading(false)
+
+            setSignupStatus(false)
+
+            console.log("Error while signing Up")
+        }
+
+    }
+
+    function closeAlert(){
+
+        setSignupStatus(false)
 
     }
 
@@ -34,39 +80,61 @@ export default function SignupForm() {
                         </p>
 
                         <>
-                            {alert ?
+                            {signupStatus ?
 
-
-                                <div className="alert alert-success shadow-lg mb-5">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                        <span>Check your email for a verification link.</span>
-                                    </div>
-                                    <div className="flex-none">
-                                        <Link href="/welcome"><button className="btn btn-sm bg-neutral">Done</button></Link>
-                                    </div>
-                                </div>
-
+                                <>
+                                    <div className="alert alert-success shadow-lg mb-3">
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                            <span>Signup successful, We have sent a confirmation email to the email address you provided.</span>
+                                        </div>
+                                        <div className="flex-none">
+                                            <button className="btn btn-sm" onClick={closeAlert}>Close</button>
+                                        </div>
+                                    </div>  
+                                </>
                                 :
+                                <>
 
-                                <></>
+                                </>
 
                             }
                         </>
 
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <label className="block mb-5">
-                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-primary" id="signUpInput2-1" type="text" placeholder="First &amp; Last Name" />
+                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-primary" id="name" type="text" placeholder="First &amp; Last Name" required />
                             </label>
                             <label className="block mb-5">
-                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-secondary" id="signUpInput2-2" type="text" placeholder="Email Address" />
+                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-secondary" id="email" type="text" placeholder="Email Address" required />
                             </label>
                             <label className="block mb-5">
-                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-accent" id="signUpInput2-3" type="password" placeholder="Create Password" />
+                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-accent" id="password" type="password" placeholder="Create Password" required />
                             </label>
-                            <button className="mb-8 py-4 px-9 w-full text-white font-semibold rounded-xl shadow-4xl bg-neutral hover:bg-neutral-focus transition ease-in-out duration-200" type="button" onClick={handleLogin}>
-                                Sign up now
-                            </button>
+
+                            <>
+                                {loading ?
+                                    <>
+
+                                        <button type="submit" className="mb-8 py-4 px-9 w-full text-white font-semibold rounded-xl shadow-4xl bg-neutral hover:bg-neutral-focus transition ease-in-out duration-200 opacity-50 cursor-not-allowed" disabled>
+                                            Signing You Up
+                                        </button>
+
+                                    </>
+
+                                    :
+
+                                    <>
+
+                                        <button type="submit" className="mb-8 py-4 px-9 w-full text-white font-semibold rounded-xl shadow-4xl bg-neutral hover:bg-neutral-focus transition ease-in-out duration-200 ">
+                                            Sign up now
+                                        </button>
+
+                                    </>
+                                }
+                            </>
+
+
                             <p className="font-medium">
                                 <span>Already have an account?</span>
                                 <Link className="text-indigo-600 hover:text-indigo-700" href="/login" >Login</Link>

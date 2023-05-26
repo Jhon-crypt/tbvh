@@ -24,7 +24,6 @@ export default function Header(){
           <div className="navbar-center">
             <a className="normal-case text-3xl font-extrabold">
                 <b>
-                    
                     <span className="text-primary">T</span>
                     <span className="text-secondary">B</span>
                     <span className="text-accent">V</span>

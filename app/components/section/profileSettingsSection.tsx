@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function ProfileSettingSection() {
 
     return (
@@ -21,24 +19,9 @@ export default function ProfileSettingSection() {
                 <div className="w-full lg:w-4/12 px-4 mx-auto">
                     <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
                         <div className="px-6">
-                            <div className="flex flex-wrap justify-center">
-                                <div className="w-full px-3 flex justify-center">
-                                    <div className="">
-                                        <Image alt="avatar" src="/avatar.jpg" className="shadow-xl rounded-full h-auto align-middle border-none  max-w-150" width={250} height={250} />
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div className="text-center mt-12">
-                                <h2 className="text-2xl font-semibold leading-normal mb-3 text-neutral">
-                                    <div className="form-control w-full max-w-xs">
-                                        <label className="label">
-                                            <span className="label-text">Upload Profile Avatar</span>
-                                        </label>
-                                        <input type="file" className="file-input file-input-bordered file-input-primary bg-white w-full max-w-xs mb-3" />
-                                        <button className="btn btn-primary w-full">Update</button>
-                                    </div>
-                                </h2>
+                            
+                            <div className="text-center mt-5">
+                                
                                 <div className="text-xl leading-normal mt-0 mb-2 text-blueGray-400 font-bold">
                                     <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
                                     <div className="form-control w-full max-w-xs">
