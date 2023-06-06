@@ -1,71 +1,81 @@
 "use client"
 
 import Link from "next/link"
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from "react";
 
 export default function SignupForm() {
+
+    const supabase = createClientComponentClient()
 
     const [loading, setLoading] = React.useState(false)
 
     const [signupStatus, setSignupStatus] = React.useState(false)
 
-    async function handleSubmit(event: any) {
 
-        setLoading(true)
+    async function handleSubmit(event: any) {
 
         event.preventDefault()
 
-        const data = {
+        setLoading(true)
+
+        const user = {
             name: String(event.target.name.value),
             email: String(event.target.email.value),
             password: String(event.target.password.value)
         }
 
-        console.log(data)
+        console.log(user)
 
-        const response = await fetch("/api/auth/signup", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data),
-        });
+        try {
 
-        if (response.ok) {
+            const { data, error } = await supabase.auth.signUp({
+                email: `${user.email}`,
+                password: `${user.password}`,
+                options: {
+                    data: {
 
-            setLoading(false)
+                        full_name: `${user.name}`,
 
-            setSignupStatus(true)
+                    }
+                }
+            })
 
-            console.log("Submitted form")
+            if (error) {
 
-            const data = await response.json()
+                setLoading(false)
 
-            console.log(data.name)
+                setSignupStatus(false)
 
-        } else if (!response.ok) {
-            setLoading(false)
+                console.log("Error while signing Up")
 
-            setSignupStatus(false)
+            } else {
 
-            console.log("Error while signing Up")
+                setLoading(false)
+
+                setSignupStatus(true)
+
+                console.log("Submitted form")
+
+                console.log(data)
+
+            }
+
+
+        } catch (error) {
+
+            console.log(error)
+
         }
 
     }
 
-    function closeAlert(){
+    function closeAlert() {
 
         setSignupStatus(false)
 
     }
 
-    /*
-    function closeAlert(){
-
-        setAlert(false);
-
-    }
-    */
 
     return (
 
@@ -86,12 +96,12 @@ export default function SignupForm() {
                                     <div className="alert alert-success shadow-lg mb-3">
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                            <span>Signup successful, We have sent a confirmation email to the email address you provided.</span>
+                                            <span className="font-medium">Signup successful, We have sent a confirmation email to the email address you provided.</span>
                                         </div>
                                         <div className="flex-none">
                                             <button className="btn btn-sm" onClick={closeAlert}>Close</button>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </>
                                 :
                                 <>
@@ -109,7 +119,7 @@ export default function SignupForm() {
                                 <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-secondary" id="email" type="text" placeholder="Email Address" required />
                             </label>
                             <label className="block mb-5">
-                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-accent" id="password" type="password" placeholder="Create Password" required />
+                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-accent" id="password" type="password" placeholder="Create Password" required minLength={6} />
                             </label>
 
                             <>

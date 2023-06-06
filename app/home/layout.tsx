@@ -1,3 +1,4 @@
+
 import Header2 from "../components/header/header2"
 
 export const metadata = {
@@ -10,12 +11,12 @@ export const metadata = {
   }: {
     children: React.ReactNode
   }) {
+
     return (
       <html lang="en" data-theme="mytheme">
         <body className="bg-white">
           <Header2 homeColor="text-primary" createColor="text-nothing" profileColor="text-nothing"/>
           {children}
-          
         </body>
       </html>
     )

@@ -1,9 +1,11 @@
+"use client"
 import Image from "next/image";
 import { BsChatDots } from "react-icons/bs"
 import { BiGhost, BiShareAlt } from "react-icons/bi"
 import { BsArrowDownCircle } from "react-icons/bs"
 import { AiOutlineDelete } from "react-icons/ai"
 import Link from "next/link"
+
 
 export default function HonestBoxesSection() {
 

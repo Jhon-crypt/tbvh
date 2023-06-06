@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { Supabase } from "../../supabase/supabase";
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { headers,cookies } from 'next/headers'
 
 type User_Data = {
     name?: string,
@@ -9,20 +10,23 @@ type User_Data = {
 
 export async function POST(request: Request){
 
-    console.log(Supabase)
+    const supabase = createServerComponentClient({ 
+        
+        cookies 
+    })
+
+    //console.log(Supabase)
 
     const info: User_Data = await request.json()
 
     const { name, email, password } = info
 
-    const { data, error } = await Supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
         email: `${email}`,
         password: `${password}`,
         options: {
             data: {
-
                 full_name: `${name}`,
-
             }
         }
     })
