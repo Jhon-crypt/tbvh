@@ -31,13 +31,28 @@ export async function POST(request: Request) {
             user_uuid: `${data.user.id}`,
             chat_box_uuid : id
         });
+
+      if(error){
+
+        let status = false
+
+        return NextResponse.json({ message: status });
+
+      }else{
+
+        let status = true
+
+        return NextResponse.json({ message: status });
+
+      }
+
     } catch (error) {
       console.log(error);
     }
 
-    return NextResponse.json({ message: message });
 
   } else {
+
     console.log("Error with getting user");
   }
 

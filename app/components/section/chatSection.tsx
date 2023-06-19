@@ -10,7 +10,22 @@ export default function ChatSection(props :
     { id : string }
 ) {
 
+    async function getChats(){
+
+        const data = {
+            chatId : props.id
+        }
     
+        const response = await fetch("", {
+            method : "GET",
+            headers: {
+                "Content-Type": "AP"
+            },
+        })
+
+    }
+
+    getChats()
 
     return (
         //{props.id}
