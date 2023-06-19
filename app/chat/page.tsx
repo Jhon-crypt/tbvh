@@ -6,7 +6,7 @@ export default function ChatPage(){
 
         <>
         
-            <ChatSection />
+            <ChatSection id="ncnkndsnvddik"/>
         
         </>
 

@@ -6,10 +6,14 @@ import { AiOutlineDelete } from "react-icons/ai"
 import ChatForm from "../auth/chatForm";
 import ChatBubbleSection from "./chatBubbleSection";
 
-export default function ChatSection() {
+export default function ChatSection(props : 
+    { id : string }
+) {
+
+    
 
     return (
-
+        //{props.id}
         <>
 
             <section className="pr-10 pl-10 py-16 bg-white overflow-hidden mb-16">
@@ -26,7 +30,7 @@ export default function ChatSection() {
                             </div>
                             <p className="text-gray-700">@user73477666 </p>
                             <p className="mt-3 text-gray-700 text-sm">
-                                Lorem ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
+                                {props.id} ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
                             </p>
                             <div className="mt-4 flex items-center">
                                 <div className="flex text-gray-700 text-sm mr-3 hover:text-primary">
