@@ -9,8 +9,6 @@ export default async function CreateHonestBox(){
         cookies
     })
 
-    console.log(cookies)
-
     const {
         data: { session },
       } = await supabase.auth.getSession()
