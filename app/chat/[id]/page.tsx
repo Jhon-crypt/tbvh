@@ -1,14 +1,34 @@
 import ChatSection from "@/app/components/section/chatSection"
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
 
-export default function Chat({ params }: { params: { id: string } }){
+type Params = {
+    params: {
+        chatId: string
+    }
+}
+
+export default async function Chat({params: { chatId }}: Params){
+
+    const supabase = createServerComponentClient({
+        cookies
+    })
+
+    const {
+        data: { session },
+      } = await supabase.auth.getSession()
+    
+      if (!session) {
+        // this is a protected route - only users who are signed in can view this route
+        redirect('/login')
+      }
 
     return (
 
         <>
-        
-            <h1>{params.id}</h1>
 
-            <ChatSection id={params.id}/>
+            
         
         </>
 

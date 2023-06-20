@@ -6,26 +6,32 @@ import { AiOutlineDelete } from "react-icons/ai"
 import ChatForm from "../auth/chatForm";
 import ChatBubbleSection from "./chatBubbleSection";
 
-export default function ChatSection(props : 
-    { id : string }
-) {
+export default async function ChatSection() {
 
-    async function getChats(){
+    
 
         const data = {
-            chatId : props.id
+            chatId : "fff"
         }
     
-        const response = await fetch("", {
+        const response = await fetch('/api/chat/fetchChatHead', {
             method : "GET",
             headers: {
-                "Content-Type": "AP"
+                "Content-Type": "apllication/json",
             },
-        })
+            body: JSON.stringify(data),
+        });
 
-    }
+        if(response.ok){
 
-    getChats()
+            console.log("Data has moved to backend")
+
+            const response_data = await response.json()
+
+            console.log(response_data)
+
+        }
+
 
     return (
         //{props.id}
@@ -45,7 +51,7 @@ export default function ChatSection(props :
                             </div>
                             <p className="text-gray-700">@user73477666 </p>
                             <p className="mt-3 text-gray-700 text-sm">
-                                {props.id} ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
+                                 ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
                             </p>
                             <div className="mt-4 flex items-center">
                                 <div className="flex text-gray-700 text-sm mr-3 hover:text-primary">
