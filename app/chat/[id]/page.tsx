@@ -2,6 +2,7 @@ import ChatSection from "@/app/components/section/chatSection"
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+import getChatHead from "@/app/lib/getChatHeads"
 
 type Params = {
     params: {
@@ -23,6 +24,8 @@ export default async function Chat({params: { chatId }}: Params){
         // this is a protected route - only users who are signed in can view this route
         redirect('/login')
       }
+
+      //const chatBoxes: Promise<Chatbox> = getChatHead(chatId)
 
     return (
 

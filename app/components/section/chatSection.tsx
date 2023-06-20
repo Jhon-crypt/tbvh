@@ -8,30 +8,7 @@ import ChatBubbleSection from "./chatBubbleSection";
 
 export default async function ChatSection() {
 
-    
-
-        const data = {
-            chatId : "fff"
-        }
-    
-        const response = await fetch('/api/chat/fetchChatHead', {
-            method : "GET",
-            headers: {
-                "Content-Type": "apllication/json",
-            },
-            body: JSON.stringify(data),
-        });
-
-        if(response.ok){
-
-            console.log("Data has moved to backend")
-
-            const response_data = await response.json()
-
-            console.log(response_data)
-
-        }
-
+   
 
     return (
         //{props.id}

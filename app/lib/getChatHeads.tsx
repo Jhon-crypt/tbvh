@@ -1,6 +1,6 @@
-export default async function getChatHeadchat(chatId : string) {
+export default async function getChatHead(chatId : string) {
 
-    const response = await fetch(`/api/chat/fetchChatHead/${chatId}`, {
+    const response = await fetch(`/api/chat/fetchChatHead?id=${chatId}`, {
         method: "GET",
         headers: {
             "Content-Type": "apllication/json",
