@@ -1,38 +1,29 @@
 import ChatSection from "@/app/components/section/chatSection"
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
-import getChatHead from "@/app/lib/getChatHeads"
+import { Suspense } from 'react'
+import LoaderSection from "@/app/components/section/loaderSection"
 
-type Params = {
-    params: {
-        chatId: string
-    }
-}
+export default async function Chat({ params }: { params: { id: any } }){
 
-export default async function Chat({params: { chatId }}: Params){
+      const fetch_chatbox = await fetch(`http://localhost:3000/api/chat/fetchChatHead?id=${params.id}`)
 
-    const supabase = createServerComponentClient({
-        cookies
-    })
+      const chatbox_response = await fetch_chatbox.json()
 
-    const {
-        data: { session },
-      } = await supabase.auth.getSession()
-    
-      if (!session) {
-        // this is a protected route - only users who are signed in can view this route
-        redirect('/login')
-      }
-
-      //const chatBoxes: Promise<Chatbox> = getChatHead(chatId)
+      console.log(chatbox_response)
 
     return (
 
         <>
 
-            
-        
+            <Suspense fallback={<LoaderSection />}>
+
+                <ChatSection 
+                    message={chatbox_response.chatBox.message} 
+                    fullname={chatbox_response.chatBox.fullname} 
+                    avatar={chatbox_response.chatBox.avatar}
+                />
+
+            </Suspense>
+                       
         </>
 
     )

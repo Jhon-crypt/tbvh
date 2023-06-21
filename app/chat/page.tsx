@@ -22,7 +22,7 @@ export default async function ChatPage(){
 
         <>
         
-            <ChatSection id="ncnkndsnvddik"/>
+            
         
         </>
 

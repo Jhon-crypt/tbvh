@@ -8,7 +8,7 @@ export default function LoaderSection() {
 
         <>
 
-            <div className="flex flex-col items-center justify-center">
+            <div className="py-16 xl:pb-56 flex flex-col items-center justify-center">
 
                 <Vortex
                     visible={true}

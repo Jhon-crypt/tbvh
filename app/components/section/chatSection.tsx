@@ -1,12 +1,15 @@
 import Image from "next/image";
-import { BsChatDots } from "react-icons/bs"
-import { BiGhost, BiShareAlt } from "react-icons/bi"
+import { BiShareAlt } from "react-icons/bi"
 import { BsArrowDownCircle } from "react-icons/bs"
 import { AiOutlineDelete } from "react-icons/ai"
 import ChatForm from "../auth/chatForm";
 import ChatBubbleSection from "./chatBubbleSection";
 
-export default async function ChatSection() {
+export default function ChatSection(props: 
+    {
+        message: string, fullname: string, avatar: string
+    }
+) {
 
    
 
@@ -20,25 +23,18 @@ export default async function ChatSection() {
                             overflowWrap: "break-word"
             }}>
                     <div className="flex items-start px-4 py-6">
-                        <Image className="w-12 h-12 rounded-full object-cover mr-4 shadow" src="/avatar.jpg" alt="avatar" width={100} height={100} />
+                        <Image className="w-12 h-12 rounded-full object-cover mr-4 shadow" src={props.avatar} alt="avatar" width={100} height={100} />
                         <div className="">
                             <div className="flex items-center justify-between">
-                                <h2 className="text-lg font-semibold text-gray-900 -mt-1">Brad Adams </h2>
-                                <small className="text-sm text-gray-700">22h ago</small>
+                                <h2 className="text-lg font-semibold text-gray-900 -mt-1">{props.fullname} </h2>
+                                <small className="text-sm text-gray-700"></small>
                             </div>
-                            <p className="text-gray-700">@user73477666 </p>
+                            <p className="text-gray-700"></p>
                             <p className="mt-3 text-gray-700 text-sm">
-                                 ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
+                                 {props.message}
                             </p>
                             <div className="mt-4 flex items-center">
-                                <div className="flex text-gray-700 text-sm mr-3 hover:text-primary">
-                                    <BsChatDots className="mr-1" />
-                                    <span>12</span>
-                                </div>
-                                <div className="flex text-gray-700 text-sm mr-8 hover:text-primary">
-                                    <BiGhost className="mr-1" />
-                                    <span>8</span>
-                                </div>
+                                
                                 <div className="dropdown dropdown-bottom dropdown-end">
 
                                     <div tabIndex={0} className="flex text-gray-700 text-sm mr-4 hover:text-primary">
