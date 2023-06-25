@@ -13,6 +13,7 @@ export async function GET(request : Request) {
     .from("honest_box")
     .select("*")
     .eq("user_uuid", `${userId}`)
+    .order('id', { ascending: false })
 
   return NextResponse.json({ chatBox });
 

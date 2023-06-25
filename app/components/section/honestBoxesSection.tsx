@@ -6,7 +6,7 @@ import { BsArrowDownCircle } from "react-icons/bs"
 import { AiOutlineDelete } from "react-icons/ai"
 import Link from "next/link"
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { Suspense } from 'react'
+import EmptyHero from "../hero/emptyHero";
 import { JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal, useEffect, useState } from 'react'
 
 export default function HonestBoxesSection() {
@@ -36,21 +36,21 @@ export default function HonestBoxesSection() {
 
                 //console.log(fetch_chatbox_data)
 
-                if (fetch_chatbox_data) {
+                setChatBoxes(fetch_chatbox_data.chatBox)
+
+                if (chatboxes.length === 0) {
 
                     setLoading(false)
 
-                    setChatBoxStatus(true)
-
-                    setChatBoxes(fetch_chatbox_data.chatBox)
-
-                    console.log(chatboxes)
+                    setChatBoxStatus(false)
 
                 } else {
 
                     setLoading(false)
 
-                    setChatBoxStatus(false)
+                    setChatBoxStatus(true)
+
+                    console.log(chatboxes)
 
                 }
 
@@ -86,55 +86,65 @@ export default function HonestBoxesSection() {
 
                 <div className="divider text-primary"></div>
 
-                {loading?
+                {loading ?
 
                     <LoaderSection />
 
                     :
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
+                    <>
 
+                        {chatBoxStatus ?
 
-                        {chatboxes.map((chat: any) => (
-                            <div className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto my-10 w-full md:w-full" style={{
-                                overflowWrap: "break-word"
-                            }} key={chat.id}>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
 
-                                <div className="flex items-start px-4 py-6">
-                                    <Image className="w-12 h-12 rounded-full object-cover mr-4 shadow" src={chat.avatar} alt="avatar" width={100} height={100} />
-                                    <div className="">
-                                        <Link href="/chat">
-                                            <div className="flex items-center justify-between">
-                                                <h2 className="text-lg font-semibold text-gray-900 -mt-1">{chat.fullname} </h2>
+                                {chatboxes.map((chat: any) => (
+                                    <div className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto my-10 w-full md:w-full" style={{
+                                        overflowWrap: "break-word"
+                                    }} key={chat.id}>
 
-                                            </div>
+                                        <div className="flex items-start px-4 py-6">
+                                            <Image className="w-12 h-12 rounded-full object-cover mr-4 shadow" src={chat.avatar} alt="avatar" width={100} height={100} />
+                                            <div className="">
+                                                <Link href={`/chat/${chat.chat_box_uuid}`}>
+                                                    <div className="flex items-center justify-between">
+                                                        <h2 className="text-lg font-semibold text-gray-900 -mt-1">{chat.fullname} </h2>
 
-                                            <p className="mt-3 text-gray-700 text-sm">
-                                                {chat.message}
-                                            </p>
-                                        </Link>
-                                        <div className="mt-4 flex items-center">
+                                                    </div>
 
-                                            <div className="dropdown dropdown-bottom dropdown-end">
+                                                    <p className="mt-3 text-gray-700 text-sm">
+                                                        {chat.message}
+                                                    </p>
+                                                </Link>
+                                                <div className="mt-4 flex items-center">
 
-                                                <div tabIndex={0} className="flex text-gray-700 text-sm mr-4 hover:text-primary">
-                                                    <BsArrowDownCircle className="mr-1" />
-                                                    <span>options</span>
+                                                    <div className="dropdown dropdown-bottom dropdown-end">
+
+                                                        <div tabIndex={0} className="flex text-gray-700 text-sm mr-4 hover:text-primary">
+                                                            <BsArrowDownCircle className="mr-1" />
+                                                            <span>options</span>
+                                                        </div>
+                                                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52 text-black">
+                                                            <li><a><BiShareAlt className="mr-4" />Share</a></li>
+                                                            <li><a><AiOutlineDelete className="mr-4" />Delete</a></li>
+                                                        </ul>
+
+                                                    </div>
                                                 </div>
-                                                <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52 text-black">
-                                                    <li><a><BiShareAlt className="mr-4" />Share</a></li>
-                                                    <li><a><AiOutlineDelete className="mr-4" />Delete</a></li>
-                                                </ul>
-
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                ))}
+
+
                             </div>
-                        ))}
 
+                            :
 
-                    </div>
+                            <EmptyHero />
+
+                        }
+                    </>
 
                 }
 
