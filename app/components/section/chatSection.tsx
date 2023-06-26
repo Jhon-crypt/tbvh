@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import { BiShareAlt } from "react-icons/bi"
 import { BsArrowDownCircle } from "react-icons/bs"
@@ -7,7 +9,7 @@ import ChatBubbleSection from "./chatBubbleSection";
 
 export default function ChatSection(props: 
     {
-        message: string, fullname: string, avatar: string
+        message: string, fullname: string, avatar: string, chatbox_id : string
     }
 ) {
 
@@ -31,7 +33,7 @@ export default function ChatSection(props:
                             </div>
                             <p className="text-gray-700"></p>
                             <p className="mt-3 text-gray-700 text-sm">
-                                 {props.message}
+                                 {props.message} 
                             </p>
                             <div className="mt-4 flex items-center">
                                 
@@ -50,7 +52,7 @@ export default function ChatSection(props:
 
                             </div>
 
-                            <ChatForm />
+                            <ChatForm chatbox_id={props.chatbox_id}/>
 
                             <div className="divider"></div>
 

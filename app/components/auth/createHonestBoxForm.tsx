@@ -35,7 +35,7 @@ export default function CreateHonestBoxForm() {
             console.log("Chat Box Created")
             const response_data = await response.json()
 
-            console.log(response_data.message)
+            
 
             if(response_data.message === true){
 
