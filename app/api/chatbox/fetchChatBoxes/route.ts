@@ -16,15 +16,15 @@ export async function GET(request : Request) {
     .order('id', { ascending: false })
 
   
-  if(chatBox){
+  if(chatBox.length === 0){
 
-    let status = true
+    let status = false
 
     return NextResponse.json({ chatBox, status : status });
 
   }else{
 
-    let status = false
+    let status = true
 
     return NextResponse.json({ chatBox, status : status });
   }

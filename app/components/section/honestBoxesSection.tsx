@@ -15,7 +15,6 @@ export default function HonestBoxesSection() {
     const router = useRouter()
 
     const [chatboxes, setChatBoxes]: any = useState([])
-    const [resChatBoxStatus, setResChatBoxStatus] = useState()
     const [chatBoxStatus, setChatBoxStatus] = useState(false)
     const [loading, setLoading] = useState(false)
     const supabase = createClientComponentClient()
@@ -40,8 +39,6 @@ export default function HonestBoxesSection() {
 
                 //console.log(fetch_chatbox_data)
 
-                setResChatBoxStatus(fetch_chatbox_data.status)
-
                 setChatBoxes(fetch_chatbox_data.chatBox)
 
                 console.log(fetch_chatbox_data.status)
@@ -54,14 +51,13 @@ export default function HonestBoxesSection() {
 
                     console.log(chatboxes)
 
-                } else {
+                } else if(fetch_chatbox_data.status === false) {
 
                     setLoading(false)
 
                     setChatBoxStatus(false)
 
-                    router.push('/create')
-
+                    
                 }
 
             } catch (error) {
@@ -102,6 +98,14 @@ export default function HonestBoxesSection() {
                     <>
 
                         {chatBoxStatus?
+
+                            <></>
+                            :
+                            <>
+                            <EmptyHero />
+                            </>
+
+                        }
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
 
@@ -146,11 +150,7 @@ export default function HonestBoxesSection() {
 
                             </div>
 
-                            :
-
-                            <EmptyHero />
-
-                        }
+                           
 
                     </>
 
