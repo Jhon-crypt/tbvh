@@ -7,11 +7,15 @@ import { AiOutlineDelete } from "react-icons/ai"
 import Link from "next/link"
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import EmptyHero from "../hero/emptyHero";
+import { useRouter } from 'next/navigation'
 import { JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal, useEffect, useState } from 'react'
 
 export default function HonestBoxesSection() {
 
+    const router = useRouter()
+
     const [chatboxes, setChatBoxes]: any = useState([])
+    const [resChatBoxStatus, setResChatBoxStatus] = useState()
     const [chatBoxStatus, setChatBoxStatus] = useState(false)
     const [loading, setLoading] = useState(false)
     const supabase = createClientComponentClient()
@@ -36,32 +40,35 @@ export default function HonestBoxesSection() {
 
                 //console.log(fetch_chatbox_data)
 
+                setResChatBoxStatus(fetch_chatbox_data.status)
+
                 setChatBoxes(fetch_chatbox_data.chatBox)
 
-                if (chatboxes.length === 0) {
+                console.log(fetch_chatbox_data.status)
+
+                if (fetch_chatbox_data.status === true) {
 
                     setLoading(false)
+ 
+                    setChatBoxStatus(true)
 
-                    setChatBoxStatus(false)
+                    console.log(chatboxes)
 
                 } else {
 
                     setLoading(false)
 
-                    setChatBoxStatus(true)
+                    setChatBoxStatus(false)
 
-                    console.log(chatboxes)
+                    router.push('/create')
 
                 }
-
 
             } catch (error) {
 
                 console.log(error)
 
             }
-
-
 
         }
 
@@ -74,7 +81,7 @@ export default function HonestBoxesSection() {
         <>
 
 
-            <section className="pr-10 pl-10 py-16 bg-white overflow-hidden mb-16">
+            <section className="xl:pb-56 pr-10 pl-10 py-16 bg-white overflow-hidden mb-16">
 
                 <div className="text-center max-w-md mx-auto">
                     <h3 className=" text-4xl md:text-7xl text-center font-bold font-heading tracking-px-n leading-tight text-black">
@@ -94,7 +101,7 @@ export default function HonestBoxesSection() {
 
                     <>
 
-                        {chatBoxStatus ?
+                        {chatBoxStatus?
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
 
@@ -144,6 +151,7 @@ export default function HonestBoxesSection() {
                             <EmptyHero />
 
                         }
+
                     </>
 
                 }

@@ -15,6 +15,18 @@ export async function GET(request : Request) {
     .eq("user_uuid", `${userId}`)
     .order('id', { ascending: false })
 
-  return NextResponse.json({ chatBox });
+  
+  if(chatBox){
+
+    let status = true
+
+    return NextResponse.json({ chatBox, status : status });
+
+  }else{
+
+    let status = false
+
+    return NextResponse.json({ chatBox, status : status });
+  }
 
 }
