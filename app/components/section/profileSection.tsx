@@ -8,6 +8,7 @@ export default function ProfileSection() {
 
     const [loading, setLoading] = useState(false)
     const [fullname, setFullname] = useState("")
+    const [avatar, setAvatar] = useState("")
 
     const supabase = createClientComponentClient()
 
@@ -26,6 +27,8 @@ export default function ProfileSection() {
                     setLoading(false)
 
                     setFullname(data.user.user_metadata.full_name)
+
+                    setAvatar(data.user.user_metadata.avatar)
 
                 } else {
 
@@ -62,7 +65,7 @@ export default function ProfileSection() {
                                 <div className="flex flex-wrap justify-center">
                                     <div className="w-full px-4 flex justify-center">
                                         <div className="">
-                                            <Image alt="avatar" src="/avatar.jpg" className="shadow-xl rounded-full h-auto align-middle border-none  max-w-150" width={250} height={250} />
+                                            <Image alt="avatar" src={avatar} className="shadow-xl rounded-full h-auto align-middle border-none  max-w-150" width={250} height={250} />
                                         </div>
                                     </div>
 

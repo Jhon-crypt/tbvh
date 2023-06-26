@@ -36,6 +36,7 @@ export default function SignupForm() {
                     data: {
 
                         full_name: `${user.name}`,
+                        avatar: "https://res.cloudinary.com/db7wwc9ex/image/upload/v1687170435/tbvh/tbvh-avatars_rzlwmb.jpg",
 
                     }
                 }
