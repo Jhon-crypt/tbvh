@@ -7,12 +7,9 @@ import { AiOutlineDelete } from "react-icons/ai"
 import Link from "next/link"
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import EmptyHero from "../hero/emptyHero";
-import { useRouter } from 'next/navigation'
-import { JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function HonestBoxesSection() {
-
-    const router = useRouter()
 
     const [chatboxes, setChatBoxes]: any = useState([])
     const [chatBoxStatus, setChatBoxStatus] = useState(false)
