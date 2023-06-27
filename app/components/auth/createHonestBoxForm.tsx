@@ -104,7 +104,7 @@ export default function CreateHonestBoxForm() {
                             
                                 <>
                                 
-                                    <button className="mb-8 py-4 px-9 w-full text-white font-semibold rounded-xl shadow-4xl bg-secondary hover:bg-secondary-focus transition ease-in-out duration-200 cursor-not-allowed" type="submit" disabled>
+                                    <button className="mb-8 py-4 px-9 w-full text-white font-semibold rounded-xl shadow-4xl bg-secondary hover:bg-secondary-focus transition ease-in-out duration-200 opacity-50 cursor-not-allowed" type="submit" disabled>
                                         Loading
                                     </button>
                                 

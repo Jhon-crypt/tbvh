@@ -14,7 +14,7 @@ export default async function Chat({ params }: { params: { id: any } }){
 
         <>
 
-            
+            <Suspense fallback={<LoaderSection />}>
 
                 <ChatSection 
                     message={chatbox_response.chatBox.message} 
@@ -23,7 +23,7 @@ export default async function Chat({ params }: { params: { id: any } }){
                     chatbox_id={chatbox_response.chatBox.chat_box_uuid}
                 />
 
-            
+            </Suspense>
                        
         </>
 

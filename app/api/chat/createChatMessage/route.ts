@@ -17,6 +17,7 @@ type chat_message = {
 const supabase = createServerComponentClient({ cookies });
 
 export async function POST(request: Request) {
+
   const randomName: string = uniqueNamesGenerator({
     dictionaries: [adjectives, colors, animals],
   });
@@ -25,25 +26,29 @@ export async function POST(request: Request) {
 
   const { message, chat_box_id } = chat_message_data;
 
-  const { data, error } = await supabase.from("honest_box_messages").insert([
-    { message: `${message}` },
-    { chatbox_uuid: `${chat_box_id}` },
-    { username: `${randomName}` },
-    {
-      avatar:
-        "https://res.cloudinary.com/db7wwc9ex/image/upload/v1687170435/tbvh/tbvh-avatars_rzlwmb.jpg",
-    },
-  ]);
+  try {
 
-  if (error) {
-    let status = false;
+    const { error } = await supabase
+    .from("honest_box_messages")
+    .insert({ 
+        message: `${message}`,
+        chatbox_uuid: `${chat_box_id}`,
+        username: `${randomName}`,
+        avatar: "https://res.cloudinary.com/db7wwc9ex/image/upload/v1687170435/tbvh/tbvh-avatars_rzlwmb.jpg"
+        });
 
-    return NextResponse.json({ message: status });
-  } else {
-    let status = true;
+    if (error) {
+      let status = false;
 
-    return NextResponse.json({ message: status });
+      return NextResponse.json({ message: status });
+    } else {
+      let status = true;
+
+      return NextResponse.json({ message: status });
+    }
+  } catch (error) {
+
+    console.log(error);
+    
   }
-
-  
 }
