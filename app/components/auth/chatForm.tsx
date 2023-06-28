@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 export default function ChatForm(props:
     {
@@ -88,13 +88,14 @@ export default function ChatForm(props:
 
                 {alertStatus ?
 
-                    <div className="alert bg-secondary mb-5 text-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        <span>Comment posted</span>
-                        <div>
-                            <button className="btn btn-sm btn-primary" onClick={closeAlert}>close</button>
+                    <>
+                        <div className="flex bg-primary-content rounded-lg p-4 mb-4 text-sm text-primary-focus" role="alert" onClick={closeAlert}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <div>
+                                <span className="font-medium">Comment posted</span>.
+                            </div>
                         </div>
-                    </div>
+                    </>
 
                     :
 
@@ -102,7 +103,7 @@ export default function ChatForm(props:
 
                 }
 
-                <textarea id="message" className="textarea textarea-primary w-full text-black bg-white" placeholder="Comment" rows={2} required></textarea>
+                <textarea id="message" className="textarea textarea-primary bg-white text-black" placeholder="Comment" required></textarea><br />
                 {loading ?
                     <>
                         <button type="submit" className="mt-3 ml-2 rounded-lg bg-primary p-2 text-white hover:bg-primary-focus opacity-50 cursor-not-allowed" disabled>

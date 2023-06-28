@@ -27,14 +27,14 @@ export default function LoginForm() {
 
         //console.log(login_data)
 
-        try{
+        try {
 
             const { data, error }: any = await supabase.auth.signInWithPassword({
                 email: `${login_data.email}`,
                 password: `${login_data.password}`,
             })
 
-            if(error){
+            if (error) {
 
                 setLoading(false)
 
@@ -44,19 +44,19 @@ export default function LoginForm() {
 
                 setRedirectAlertStatus(false)
 
-            }else{
+            } else {
 
                 setLoading(false)
 
                 console.log("User Logged In")
 
                 setLoginStatus(true)
-                
+
                 setRedirectAlertStatus(true)
 
             }
 
-        }catch(error){
+        } catch (error) {
 
             console.log(error)
 
@@ -87,7 +87,7 @@ export default function LoginForm() {
 
                                 <>
 
-                                    
+
 
                                 </>
 
@@ -97,7 +97,7 @@ export default function LoginForm() {
 
                                     <div className="alert alert-error shadow-lg mb-3">
                                         <div>
-                                        <svg onClick={closeAlert} xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                            <svg onClick={closeAlert} xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                             <span className="font-medium">Wrong email and password combination.</span>
                                         </div>
                                     </div>
@@ -110,29 +110,29 @@ export default function LoginForm() {
 
                         <>
 
-                            {redirectAlertStatus?
+                            {redirectAlertStatus ?
 
                                 <>
-                                
+
                                     <div className="alert alert-success shadow-lg mb-3">
-                                        <div>
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                            <span className="font-medium">Login successful, click <Link className="text-primary" href="/home">here</Link> to continue</span>
-                                        </div>
-                                        
-                                    </div>  
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                        <span className="font-medium">Login successful, click <Link className="text-primary" href="/home">here</Link> to continue</span>
+
+
+                                    </div>
 
                                 </>
 
-                                : 
+                                :
 
                                 <>
-                                
-                                
+
+
                                 </>
 
                             }
-                
+
                         </>
 
                         <form onSubmit={handleLogin}>

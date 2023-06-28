@@ -13,7 +13,7 @@ export default function HonestBoxesSection() {
 
     const [chatboxes, setChatBoxes]: any = useState([])
     const [chatBoxStatus, setChatBoxStatus] = useState(false)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const supabase = createClientComponentClient()
 
     useEffect(() => {
@@ -133,7 +133,7 @@ export default function HonestBoxesSection() {
                                                             <span>options</span>
                                                         </div>
                                                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52 text-black">
-                                                            <li><a><BiShareAlt className="mr-4" />Share</a></li>
+                                                            
                                                             <li><a><AiOutlineDelete className="mr-4" />Delete</a></li>
                                                         </ul>
 
