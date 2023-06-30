@@ -104,7 +104,7 @@ export default function ChatBubbleSection(props:
                                 <div className="chat-header text-black">
                                     {chat.username}
                                 </div>
-                                <div className="chat-bubble bg-primary mr-5">{chat.message}</div>
+                                <div className="chat-bubble bg-primary" style={{ overflowWrap : "break-word" }}>{chat.message}</div>
                                 <div className="chat-footer opacity-50">
                                     Delivered
                                 </div>
