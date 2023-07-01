@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { BiShareAlt } from "react-icons/bi"
-import { BsArrowDownCircle } from "react-icons/bs"
 import ChatForm from "../auth/chatForm";
 import ChatBubbleSection from "./chatBubbleSection";
 
