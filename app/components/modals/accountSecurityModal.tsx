@@ -93,7 +93,7 @@ export default function AccountSecurityModal(){
                                 <label className="label">
                                     <span className="label-text">Update Password</span>
                                 </label>
-                                <input id="password" type="password" placeholder="Type here" className="input input-bordered input-secondary bg-white mb-3" required/>
+                                <input id="password" type="password" placeholder="Type here" className="input input-bordered input-secondary bg-white mb-3" required minLength={6}/>
                                 {loading ?
 
                                         <>

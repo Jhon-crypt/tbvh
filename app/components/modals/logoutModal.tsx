@@ -10,7 +10,7 @@ export default function LooutModal() {
     const supabase = createClientComponentClient()
 
     const [loading, setLoading] = useState(false);
-
+    
     const [alertStatus, setAlertStatus] = useState(false)
 
     async function handleLogout(){
