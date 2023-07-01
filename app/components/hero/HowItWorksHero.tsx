@@ -10,7 +10,7 @@ export default function HowItWorksHero() {
                 <div className="container px-4 mx-auto">
                     <div className="flex flex-wrap lg:items-center -m-8">
                         <div className="w-full md:w-1/2 p-8">
-                            <Image className="mx-auto transform hover:-translate-y-4 transition ease-in-out duration-1000 rounded-md" width={500} height={500} src="/how.png" alt="How It Works" />
+                            <Image className="mx-auto transform hover:-translate-y-4 transition ease-in-out duration-1000 rounded-md" width={500} height={500} src="https://res.cloudinary.com/db7wwc9ex/image/upload/v1688245070/tbvh/how_jkaesx.png" alt="How It Works" />
                         </div>
                         <div className="w-full md:w-1/2 p-8">
                             <h2 className="mb-20 text-6xl md:text-7xl font-bold font-heading tracking-px-n leading-tight md:max-w-lg text-black">How TBVH works it shit out.</h2>

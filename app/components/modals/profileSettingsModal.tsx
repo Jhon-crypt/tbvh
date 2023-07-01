@@ -96,7 +96,7 @@ export default function ProfileSettingModal() {
                                 <i className="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Update Full Name</span>
+                                        <span className="label-text">Update Username</span>
                                     </label>
                                     <input id="fullname" type="text" placeholder="Type here" className="input input-bordered input-secondary bg-white mb-3" required />
 

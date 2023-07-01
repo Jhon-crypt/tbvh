@@ -114,7 +114,7 @@ export default function SignupForm() {
 
                         <form onSubmit={handleSubmit}>
                             <label className="block mb-5">
-                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-primary" id="name" type="text" placeholder="First &amp; Last Name" required />
+                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-primary" id="name" type="text" placeholder="Username" required />
                             </label>
                             <label className="block mb-5">
                                 <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-secondary" id="email" type="text" placeholder="Email Address" required />

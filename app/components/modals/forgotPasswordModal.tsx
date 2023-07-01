@@ -1,6 +1,6 @@
 "use client"
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function ForgotPasswordModal() {
 
@@ -11,7 +11,11 @@ export default function ForgotPasswordModal() {
     //password reset mail alert
     const [prmAlert, setPrmAlertStatus] = useState(false)
 
+    const [prmAlertError, setPrmAlertError] = useState(false)
+
     const [resetPasswordAlert, setPasswordResetAlertStatus] = useState(false)
+
+    const [resetPasswordError, setResetPasswordError] = useState(false)
 
     const [resetStateChange, setResetStateChange] = useState(false)
 
@@ -37,11 +41,13 @@ export default function ForgotPasswordModal() {
 
                 setPrmAlertStatus(true)
 
+                setResetStateChange(true)
+
             } else if (error) {
 
                 setLoading(false)
 
-                setPrmAlertStatus(false)
+                setPrmAlertError(true)
 
             }
 
@@ -53,17 +59,6 @@ export default function ForgotPasswordModal() {
 
     }
 
-
-
-    useEffect(() => {
-        supabase.auth.onAuthStateChange(async (event, session) => {
-            if (event == "PASSWORD_RECOVERY") {
-
-                setResetStateChange(true)
-
-            }
-        })
-    }, [])
 
     async function handleResetPassword(event: any) {
 
@@ -89,6 +84,8 @@ export default function ForgotPasswordModal() {
             } else if (error) {
 
                 setLoading(false)
+
+                setResetPasswordError(true)
 
             }
 
@@ -123,13 +120,23 @@ export default function ForgotPasswordModal() {
                             <div className="flex bg-primary-content rounded-lg p-4 mb-4 text-sm text-primary-focus" role="alert" onClick={closeAlert}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                 <div>
-                                    <span className="font-medium">A password reset link has been sent to your Email, click the link and come back here!</span>
+                                    <span className="font-medium">A password reset link has been sent to your Email, click the link in the mail, then come back here and set your new password!</span>
                                 </div>
                             </div>
 
                         </>
 
                         :
+
+                        <>
+
+
+
+                        </>
+
+                    }
+
+                    {prmAlertError ?
 
                         <>
 
@@ -142,6 +149,10 @@ export default function ForgotPasswordModal() {
 
                         </>
 
+                        :
+
+                        <></>
+
                     }
 
                     {resetPasswordAlert ?
@@ -151,7 +162,7 @@ export default function ForgotPasswordModal() {
                             <div className="flex bg-primary-content rounded-lg p-4 mb-4 text-sm text-primary-focus" role="alert" onClick={closeAlert}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                 <div>
-                                    <span className="font-medium">Password updated, redirecting you to login...</span>
+                                    <span className="font-medium">Password updated</span>
                                 </div>
                             </div>
 
@@ -161,15 +172,29 @@ export default function ForgotPasswordModal() {
 
                         <>
 
+
+
+                        </>
+
+
+                    }
+
+                    {resetPasswordError ?
+
+                        <>
+
                             <div className="flex bg-primary-content rounded-lg p-4 mb-4 text-sm text-primary-focus" role="alert" onClick={closeAlert}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                 <div>
-                                    <span className="font-medium">The God of TBVH, rejected your password, try again</span>
+                                    <span className="font-medium">The God of TBVH rejected your password, try again</span>
                                 </div>
                             </div>
 
                         </>
 
+                        :
+
+                        <></>
 
                     }
 
@@ -182,7 +207,7 @@ export default function ForgotPasswordModal() {
                                 <label className="label">
                                     <span className="label-text">Enter new password</span>
                                 </label>
-                                <input id="passwword" type="password" placeholder="Type here" className="input input-bordered input-secondary bg-white mb-3 w-full" required minLength={6} />
+                                <input id="password" type="password" placeholder="Type here" className="input input-bordered input-secondary bg-white mb-3 w-full" required minLength={6} />
 
                                 {loading ?
 
@@ -213,7 +238,7 @@ export default function ForgotPasswordModal() {
                             <p className="py-4 text-center text-black">Enter your email button below to reset your password</p>
                             <form onSubmit={passwordResetMail}>
                                 <label className="label">
-                                    <span className="label-text">Enter email</span>
+                                    <span className="label-text">Enter the email you used while signing up</span>
                                 </label>
                                 <input id="email" type="email" placeholder="Type here" className="input input-bordered input-secondary bg-white mb-3 w-full" required />
 

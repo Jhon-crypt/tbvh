@@ -3,7 +3,6 @@
 import Link from "next/link"
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from "react";
-import ForgotPasswordModal from "../modals/forgotPasswordModal"
 
 export default function LoginForm() {
 
@@ -181,7 +180,7 @@ export default function LoginForm() {
                 </div>
             </section>
 
-            <ForgotPasswordModal />
+            
 
         </>
 

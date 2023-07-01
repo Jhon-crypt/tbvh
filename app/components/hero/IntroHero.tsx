@@ -54,13 +54,13 @@ export default function IntroHero() {
                                                 </div>
                                             </div>
                                         </button>
-                                        </Link>
+                                        </Link> 
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="w-full md:w-1/2 p-8">
-                            <Image className="transform hover:-translate-y-16 transition ease-in-out duration-1000" src="/hero1.png" width={600} height={700} alt="Hero image" />
+                            <Image className="transform hover:-translate-y-16 transition ease-in-out duration-1000" src="https://res.cloudinary.com/db7wwc9ex/image/upload/v1688244767/tbvh/hero1_gip164.png" width={600} height={700} alt="Hero image" />
                         </div>
                     </div>
                 </div>

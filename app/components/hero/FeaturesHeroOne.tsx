@@ -12,7 +12,7 @@ export default function FeaturesHeroOne() {
                     <div className="flex flex-wrap xl:items-center -m-8 xl:-m-10">
                         <div className="w-full md:w-1/2 xl:w-auto p-8 xl:p-10">
                             <a className="block overflow-hidden rounded-3xl" href="#">
-                                <Image className="w-full transform hover:scale-105 transition ease-in-out duration-1000" src="/features1.png" width={500} height={500} alt="Features Hero Two" />
+                                <Image className="w-full transform hover:scale-105 transition ease-in-out duration-1000" src="https://res.cloudinary.com/db7wwc9ex/image/upload/v1688244932/tbvh/features1_strfyq.png" width={500} height={500} alt="Features Hero Two" />
                             </a>
                         </div>
                         <div className="w-full md:w-1/2 xl:flex-1 p-8 xl:p-10">
