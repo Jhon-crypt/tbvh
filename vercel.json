@@ -1,8 +1,8 @@
 {
     "rewrites" : [
         {
-            "source": "/:match*(.*)",
-            "destination": "/:match*"
+            "source": "chat/:match*",
+            "destination": "https://tbvh.vercel.app/chat/:match*"
         }
     ]
 }
