@@ -19,7 +19,7 @@ export default function FeaturesHeroOne() {
                             <div className="md:max-w-xl">
                                 <div className="mb-11 pb-32 border-b">
                                     <h3 className="text-lg font-semibold md:max-w-lg text-black">
-                                        We've built TBVH to enable and
+                                        We&apos;ve built TBVH to enable and
                                         empower people to express themselves honestly and receive unvarnished feedback from a community
                                         of anonymous responders.
                                     </h3>

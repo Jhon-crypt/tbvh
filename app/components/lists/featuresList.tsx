@@ -18,7 +18,7 @@ export default function FeaturesList() {
                                         </div>
                                     </div>
                                     <div className="flex-1 p-3">
-                                        <h3 className="text-xl font-semibold">Get honest and unfiltered feedback with TBVH's anonymity.</h3>
+                                        <h3 className="text-xl font-semibold">Get honest and unfiltered feedback with TBVH&apos;s anonymity.</h3>
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@ export default function FeaturesList() {
                                         </div>
                                     </div>
                                     <div className="flex-1 p-3">
-                                        <h3 className="text-xl font-semibold">Speak your mind without fear on TBVH's anonymous platform.</h3>
+                                        <h3 className="text-xl font-semibold">Speak your mind without fear on TBVH&apos;s anonymous platform.</h3>
                                     </div>
                                 </div>
                             </div>

@@ -23,7 +23,7 @@ export default function IntroHero() {
                                 </div>
                             </div>
                             <h1 className="mb-6 text-6xl md:text-8xl lg:text-10xl font-bold font-heading md:max-w-xl leading-none text-black">TBVH: Be Honest, Speak Freely Now.</h1>
-                            <p className="mb-11 text-lg text-gray-900 font-medium md:max-w-md">TBVH lets you find out the truth on people's thoughts about you and other stuffs going on.</p>
+                            <p className="mb-11 text-lg text-gray-900 font-medium md:max-w-md">TBVH lets you find out the truth on people&apos;s thoughts about you and other stuffs going on.</p>
                             <div className="flex flex-wrap -m-2.5 mb-20">
                                 <div className="w-full md:w-auto p-2.5">
                                     <div className="block">

@@ -55,7 +55,7 @@ export default function HowItWorksHero() {
                                         <div className="flex-1 p-6">
                                             <div className="md:max-w-xs">
                                                 <h3 className="mb-3 text-2xl font-semibold leading-snug text-accent">Share Your ChatBox</h3>
-                                                <p className="text-gray-700 font-medium leading-relaxed">To get people's opinion on your chatbox, you should share the link accross your socials</p>
+                                                <p className="text-gray-700 font-medium leading-relaxed">To get people&apos;s opinion on your chatbox, you should share the link accross your socials</p>
                                             </div>
                                         </div>
                                     </div>
