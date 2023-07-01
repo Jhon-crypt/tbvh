@@ -53,59 +53,58 @@ export default function ForgotPasswordModal() {
 
     }
 
-    
+
 
     useEffect(() => {
         supabase.auth.onAuthStateChange(async (event, session) => {
-          if (event == "PASSWORD_RECOVERY") {
+            if (event == "PASSWORD_RECOVERY") {
 
-            async function handleResetPassword(event: any) {
+                setResetStateChange(true)
 
-                setLoading(true)
-        
-                event.preventDefault()
-        
-                const password_update = {
-                    password: String(event.target.password.value)
-                }
-        
-                try {
-        
-                    const { data, error } = await supabase.auth
-                    .updateUser({ password: `${password_update.password}` })
-        
-                    if(data){
-        
-                        setLoading(false)
-        
-                        setPasswordResetAlertStatus(true)
-        
-                        setResetStateChange(true)
-        
-                    }else if(error){
-        
-                        setLoading(false)
-        
-                    }
-        
-                }catch(error){
-        
-                    console.log(error)
-        
-                }
-        
             }
-        
-        
-            function closeAlert() {
-        
-                setPrmAlertStatus(false)
-        
-            }
-            
-          }
         })
-      }, [])
+    }, [])
+
+    async function handleResetPassword(event: any) {
+
+        setLoading(true)
+
+        event.preventDefault()
+
+        const password_update = {
+            password: String(event.target.password.value)
+        }
+
+        try {
+
+            const { data, error } = await supabase.auth
+                .updateUser({ password: `${password_update.password}` })
+
+            if (data) {
+
+                setLoading(false)
+
+                setPasswordResetAlertStatus(true)
+
+            } else if (error) {
+
+                setLoading(false)
+
+            }
+
+        } catch (error) {
+
+            console.log(error)
+
+        }
+
+    }
+
+    function closeAlert() {
+
+        setPrmAlertStatus(false)
+
+    }
 
     return (
 
@@ -145,6 +144,35 @@ export default function ForgotPasswordModal() {
 
                     }
 
+                    {resetPasswordAlert ?
+
+                        <>
+
+                            <div className="flex bg-primary-content rounded-lg p-4 mb-4 text-sm text-primary-focus" role="alert" onClick={closeAlert}>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <div>
+                                    <span className="font-medium">Password updated, redirecting you to login...</span>
+                                </div>
+                            </div>
+
+                        </>
+
+                        :
+
+                        <>
+
+                            <div className="flex bg-primary-content rounded-lg p-4 mb-4 text-sm text-primary-focus" role="alert" onClick={closeAlert}>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <div>
+                                    <span className="font-medium">The God of TBVH, rejected your password, try again</span>
+                                </div>
+                            </div>
+
+                        </>
+
+
+                    }
+
                     {resetStateChange ?
 
                         <>
@@ -154,26 +182,26 @@ export default function ForgotPasswordModal() {
                                 <label className="label">
                                     <span className="label-text">Enter new password</span>
                                 </label>
-                                <input id="passwword" type="password" placeholder="Type here" className="input input-bordered input-secondary bg-white mb-3 w-full" required minLength={6}/>
+                                <input id="passwword" type="password" placeholder="Type here" className="input input-bordered input-secondary bg-white mb-3 w-full" required minLength={6} />
 
-                                {loading?
+                                {loading ?
 
                                     <>
 
                                         <button className="btn btn-wide btn-primary w-full opacity-50 cursor-not-allowed" disabled>Resetting...</button>
-                                    
+
                                     </>
 
                                     :
 
                                     <>
-                                    
+
                                         <button className="btn btn-wide btn-primary w-full">Reset Password</button>
-                                    
+
                                     </>
 
                                 }
-                                
+
                             </form>
 
                         </>
@@ -189,25 +217,24 @@ export default function ForgotPasswordModal() {
                                 </label>
                                 <input id="email" type="email" placeholder="Type here" className="input input-bordered input-secondary bg-white mb-3 w-full" required />
 
-                                {loading?
+                                {loading ?
 
                                     <>
-                                    
+
                                         <button className="btn btn-wide btn-primary w-full opacity-50 cursor-not-allowed" disabled>Sending Mail</button>
-                                    
+
                                     </>
 
                                     :
 
                                     <>
-                                    
+
                                         <button className="btn btn-wide btn-primary w-full">Send Password Reset Mail</button>
-                                    
+
                                     </>
 
                                 }
 
-                                <button className="btn btn-wide btn-primary w-full">Send Password Reset Mail</button>
                             </form>
 
                         </>
