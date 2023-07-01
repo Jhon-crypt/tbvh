@@ -54,7 +54,7 @@ export default function ChatBubbleSection(props:
 
         getChats()
 
-    }, [])
+    }, [props.chatbox_id, supabase])
 
     useEffect(() => {
 

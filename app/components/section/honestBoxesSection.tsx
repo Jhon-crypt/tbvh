@@ -55,7 +55,6 @@ export default function HonestBoxesSection() {
 
                     setChatBoxStatus(true)
 
-                    console.log(chatboxes)
 
                 } else if (fetch_chatbox_data.status === false) {
 
@@ -76,7 +75,7 @@ export default function HonestBoxesSection() {
 
         getChatBoxes()
 
-    }, [])
+    }, [supabase])
 
     const deleteHonestBox = async (id: any, chat_id: any) => {
 

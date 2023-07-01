@@ -14,7 +14,7 @@ export default function ChatSection(props:
 
 
     return (
-        //{props.id}
+        
         <>
 
             <section className="pr-10 pl-10 py-16 bg-white overflow-hidden mb-16">
