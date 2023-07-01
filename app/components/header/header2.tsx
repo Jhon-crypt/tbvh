@@ -2,6 +2,7 @@ import Link from "next/link"
 import { FaGhost } from "react-icons/fa"
 import { BiCog, BiHomeAlt, BiUserCircle } from "react-icons/bi"
 import { FaPlusCircle } from "react-icons/fa"
+import LogoutModal from "../modals/logoutModal"
 
 export default function Header2(props:
     { homeColor: string, createColor: string, profileColor: string }
@@ -60,7 +61,7 @@ export default function Header2(props:
                                 <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-white 
                                 text-black rounded-box w-52">
                                     <li><Link href="/settings">Settings</Link></li>
-                                    <li><Link href="/logout">Log out</Link></li>
+                                    <li><label htmlFor="logout">Log out</label></li>
                                 </ul>
                             </div>
                         </div>
@@ -68,6 +69,8 @@ export default function Header2(props:
 
                 </div>
             </div>
+
+            <LogoutModal />
 
         </>
 

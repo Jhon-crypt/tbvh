@@ -1,5 +1,7 @@
-import Link from "next/link"
 import { BiCog, BiUserCircle } from "react-icons/bi"
+import ProfileSettingModal from "../modals/profileSettingsModal"
+import AccountSettingsModal from "../modals/accountSettingsModal"
+import AccountSecurityModal from "../modals/accountSecurityModal"
 
 export default function SettingsSection() {
 
@@ -22,75 +24,40 @@ export default function SettingsSection() {
 
                                 <ul className=" overflow-hidden shadow-md my-3">
                                     <li className=" text-black text-2xl px-4 py-2 bg-white hover:bg-primary-content transition-all duration-300 ease-in-out border-t">
-                                        <button className="btn btn-outline btn-primary">
+                                        <label htmlFor="profile_settings" className="btn btn-outline btn-primary">
                                             <BiUserCircle className="text-2xl"/>
                                             Profile Settings
-                                        </button>
+                                        </label>
                                     </li>
                                     <li className=" text-black text-2xl px-4 py-2 bg-white hover:bg-secondary-content transition-all duration-300 ease-in-out border-t">
-                                        <button className="btn btn-outline btn-secondary">
+                                        <label htmlFor="account_settings" className="btn btn-outline btn-secondary">
                                             <BiCog className="text-2xl"/>
                                             Account Settings
-                                        </button>
+                                        </label>
                                     </li>
-                                    <li className=" text-black text-2xl px-4 py-2 bg-white hover:bg-primary-content transition-all duration-300 ease-in-out border-t">
-                                        <button className="btn btn-outline btn-primary">
+                                    <li className=" text-black text-2xl px-4 py-2 bg-white hover:bg-neutral-content transition-all duration-300 ease-in-out border-t">
+                                        <label htmlFor="account_security" className="btn btn-outline btn-neutral text-black">
                                             <BiUserCircle className="text-2xl"/>
                                             Account Security
-                                        </button>
+                                        </label>
                                     </li>
                                 </ul>
 
                             </div>
 
-                            {/*
-                            <div className="grid place-content-center mb-3">
-
-                                
-                                <Link href="profileSetting">
-                                <div className="collapse border border-primary bg-white rounded-box shadow-xl text-black">
-                                    <div className="collapse-title text-xl font-medium">
-                                        Profile Settings
-                                    </div>
-                                </div>
-                                </Link>
-
-                            </div>
-
-                            <div className="divider"></div>
-
-                            <div className="grid place-content-center mb-3">
-
-                                <Link href="accountSetting">
-                                <div className="collapse border border-secondary bg-white rounded-box shadow-xl text-black">
-                                    <div className="collapse-title text-xl font-medium">
-                                        Account Settings
-                                    </div>
-                                </div>
-                                </Link>
-
-                            </div>
-
-                            <div className="divider"></div>
-
-                            <div className="grid place-content-center mb-3">
-
-                                <Link href="accountSecurity">
-                                <div className="collapse border border-neutral bg-white rounded-box shadow-xl text-black">
-                                    <div className="collapse-title text-xl font-medium">
-                                        Account Security
-                                    </div>
-                                </div>
-                                </Link>
-
-                            </div>
-                            */}
+                            
 
                         </div>
 
                     </div>
                 </div>
             </section>
+
+            <ProfileSettingModal />
+
+            <AccountSettingsModal />
+
+            <AccountSecurityModal />
 
         </>
 
