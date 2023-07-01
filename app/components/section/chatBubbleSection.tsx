@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import Image from "next/image";
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import LoaderSection from './loaderSection';
-import { Suspense } from 'react'
 
 export default function ChatBubbleSection(props:
     {
