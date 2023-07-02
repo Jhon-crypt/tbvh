@@ -33,7 +33,7 @@ export default function LooutModal() {
 
                 setAlertStatus(true)
 
-                router.push('/login')
+                router.push('https://tbvh.vercel.app/login')
 
             }
 
