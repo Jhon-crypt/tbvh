@@ -9,7 +9,7 @@ export default function ChatSection(props:
     {
         message: string, fullname: string, avatar: string, chatbox_id: string
     }
-) {
+) { 
 
 
 

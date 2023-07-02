@@ -38,8 +38,9 @@ export default function HonestBoxesSection() {
                 //console.log(data)
 
                 //console.log(data.user.id)
+                
 
-                const fetch_chatBoxes = await fetch(`http://localhost:3000/api/chatbox/fetchChatBoxes?userId=${data.user.id}`);
+                const fetch_chatBoxes = await fetch(`https://tbvh.vercel.app/api/chatbox/fetchChatBoxes?userId=${data.user.id}`);
 
                 const fetch_chatbox_data = await fetch_chatBoxes.json()
 
