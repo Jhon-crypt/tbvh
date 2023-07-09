@@ -4,6 +4,7 @@ import FeaturesList from "./components/lists/featuresList";
 import FeaturesHeroOne from "./components/hero/FeaturesHeroOne";
 import HowItWorksHero from "./components/hero/HowItWorksHero";
 import CallToAction from "./components/hero/CallToActionHero"
+import Footer from './components/footer/footer'
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
       <HowItWorksHero />
 
       <CallToAction />
+
+      <Footer />
 
     </>
   )

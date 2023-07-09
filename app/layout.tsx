@@ -1,6 +1,6 @@
 import './globals.css'
 import Header from './components/header/header'
-import Footer from './components/footer/footer'
+//import Footer from './components/footer/footer'
 import Head from "next/head"
 
 export const metadata = {
@@ -43,7 +43,6 @@ export default function RootLayout({
       <body className="bg-white">
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   )
