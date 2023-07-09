@@ -47,7 +47,7 @@ export default function ChatBubbleSection(props:
             } catch (error) {
 
                 console.log(error)
-
+                                                                                                
             }
 
         }

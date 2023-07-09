@@ -1,11 +1,9 @@
 "use client"
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+
 
 export default function LooutModal() {
-
-    const router = useRouter()
 
     const supabase = createClientComponentClient()
 
@@ -33,7 +31,7 @@ export default function LooutModal() {
 
                 setAlertStatus(true)
 
-                router.push('https://tbvh.vercel.app/login')
+                window.location.href = "http://localhost:3000/login";
 
             }
 
