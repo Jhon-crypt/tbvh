@@ -9,7 +9,6 @@ export async function GET(request: Request) {
     key : process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   }
 
-
   const supabase  = createClient(supabase_config.url,supabase_config.key)
 
   const { searchParams } = new URL(request.url);
