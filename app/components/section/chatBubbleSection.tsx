@@ -1,7 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react'
 import Image from "next/image";
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import LoaderSection from './loaderSection';
 import { createClient } from '@supabase/supabase-js'
 
@@ -16,7 +15,7 @@ export default function ChatBubbleSection(props:
         key : process.env.NEXT_PUBLIC_SUPABASE_KEY
     }
 
-    const supabase = createClient(supabase_config.url, supabase_config.key)
+    const supabase = createClient('https://vgcabbxadiekjzzjamux.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZnY2FiYnhhZGlla2p6emphbXV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM4MzI0NDgsImV4cCI6MTk5OTQwODQ0OH0.pFj621LtTxLq9qZlrZFnOk_ol_RKAYRYiVL0qOHDC9Q')
 
     const [loading, setLoading] = useState(false)
 
