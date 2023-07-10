@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-
+import { createClient } from '@supabase/supabase-js'
+ 
 export async function GET(request: Request) {
-  const supabase = createServerComponentClient({ cookies });
+  //const supabase = createServerComponentClient({ cookies });
+
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  const supabase  = createClient(`${url}`,`${key}`)
 
   const { searchParams } = new URL(request.url);
 
