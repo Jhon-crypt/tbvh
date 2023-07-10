@@ -4,7 +4,7 @@ import LoaderSection from "../../components/section/loaderSection"
 
 export default async function Chat({ params }: { params: { id: any } }){
 
-      const fetch_chatbox = await fetch(`http://localhost:3000//api/chat/fetchChatHead?id=${params.id}`)
+      const fetch_chatbox = await fetch(`https://tbvh.vercel.app/api/chat/fetchChatHead?id=${params.id}`)
 
       const chatbox_response = await fetch_chatbox.json()
 
