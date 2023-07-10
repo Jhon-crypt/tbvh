@@ -4,12 +4,20 @@ import type { NextRequest } from "next/server";
 
 export async function middleware(req: NextRequest) {
 
-    const res = NextResponse.next()
+    if(req.nextUrl.pathname.startsWith('/chat')){
 
-    const supabase = createMiddlewareClient({ req, res })
+        return "Working"
 
-    await supabase.auth.getSession()
+    }else{
 
-    return res
+        const res = NextResponse.next()
+
+        const supabase = createMiddlewareClient({ req, res })
+
+        await supabase.auth.getSession()
+
+        return res
+
+    }
 
 }
