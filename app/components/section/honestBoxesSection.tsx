@@ -154,7 +154,7 @@ export default function HonestBoxesSection() {
 
                 <div className="text-center max-w-md mx-auto">
                     <h3 className=" text-4xl md:text-7xl text-center font-bold font-heading tracking-px-n leading-tight text-black">
-                        Chat Boxes
+                        Honest Boxes
                     </h3>
                 </div>
 

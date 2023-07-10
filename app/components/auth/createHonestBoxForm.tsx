@@ -70,7 +70,7 @@ export default function CreateHonestBoxForm() {
                 <div className="container px-4 mx-auto">
                     <div className="text-center max-w-md mx-auto">
                         <h3 className="mb-4 text-6xl md:text-7xl text-center font-bold font-heading tracking-px-n leading-tight text-black">
-                            Create Your Chat Box
+                            Create Honest Box
                         </h3>
                         <p className="mb-12 font-medium text-lg text-gray-600 leading-normal"></p>
 
