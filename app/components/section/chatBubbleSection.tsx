@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Image from "next/image";
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import LoaderSection from './loaderSection';
+import { createClient } from '@supabase/supabase-js'
 
 export default function ChatBubbleSection(props:
     {
@@ -10,7 +11,12 @@ export default function ChatBubbleSection(props:
     }
 ) {
 
-    const supabase = createClientComponentClient()
+    const supabase_config : any = {
+        url : process.env.NEXT_PUBLIC_SUPABASE_URL,
+        key : process.env.NEXT_PUBLIC_SUPABASE_KEY
+    }
+
+    const supabase = createClient(supabase_config.url, supabase_config.key)
 
     const [loading, setLoading] = useState(false)
 
