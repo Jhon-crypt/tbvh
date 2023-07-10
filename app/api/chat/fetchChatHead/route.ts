@@ -4,10 +4,13 @@ import { createClient } from '@supabase/supabase-js'
 export async function GET(request: Request) {
   //const supabase = createServerComponentClient({ cookies });
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  const supabase_config : any = {
+    url : process.env.NEXT_PUBLIC_SUPABASE_URL,
+    key : process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  }
 
-  const supabase  = createClient(`${url}`,`${key}`)
+
+  const supabase  = createClient(supabase_config.url,supabase_config.key)
 
   const { searchParams } = new URL(request.url);
 
