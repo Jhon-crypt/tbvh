@@ -31,7 +31,7 @@ export default function LooutModal() {
 
                 setAlertStatus(true)
 
-                window.location.href = "http://localhost:3000/login";
+                window.location.href = "https://tbvh.vercel.app/login";
 
             }
 

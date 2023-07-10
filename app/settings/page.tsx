@@ -14,7 +14,7 @@ export default async function SettingsPage(){
     
       if (!session) {
         // this is a protected route - only users who are signed in can view this route
-        window.location.href = "http://localhost:3000/login";
+        window.location.href = "https://tbvh.vercel.app/login";
 
       }
 

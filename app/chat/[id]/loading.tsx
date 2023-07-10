@@ -1,4 +1,5 @@
-import LoaderSection from "../components/section/loaderSection"
+import LoaderSection from "../../components/section/loaderSection"
+
 
 export default function Loading(){
 
