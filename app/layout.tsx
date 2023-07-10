@@ -40,7 +40,7 @@ export default function RootLayout({
         <meta name="twitter:description" content="TBVH is a public anonymous chatting site that lets you find out the truth on people thoughts about you and other stuffs going on" />
 
       </Head>
-      <body className="bg-white">
+      <body className="bg-white min-h-screen">
         <Header />
         {children}
       </body>
