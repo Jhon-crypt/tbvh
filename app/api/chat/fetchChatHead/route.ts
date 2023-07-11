@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-
+import { createClient } from '@supabase/supabase-js'
+ 
 export async function GET(request: Request) {
-  const supabase = createServerComponentClient({ cookies });
+  //const supabase = createServerComponentClient({ cookies });
+
+  const supabase  = createClient('https://vgcabbxadiekjzzjamux.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZnY2FiYnhhZGlla2p6emphbXV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM4MzI0NDgsImV4cCI6MTk5OTQwODQ0OH0.pFj621LtTxLq9qZlrZFnOk_ol_RKAYRYiVL0qOHDC9Q')
 
   const { searchParams } = new URL(request.url);
 
