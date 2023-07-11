@@ -10,10 +10,6 @@ export default function ChatBubbleSection(props:
     }
 ) {
 
-    const supabase_config : any = {
-        url : process.env.NEXT_PUBLIC_SUPABASE_URL,
-        key : process.env.NEXT_PUBLIC_SUPABASE_KEY
-    }
 
     const supabase = createClient('https://vgcabbxadiekjzzjamux.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZnY2FiYnhhZGlla2p6emphbXV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM4MzI0NDgsImV4cCI6MTk5OTQwODQ0OH0.pFj621LtTxLq9qZlrZFnOk_ol_RKAYRYiVL0qOHDC9Q')
 
