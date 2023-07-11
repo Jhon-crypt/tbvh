@@ -5,7 +5,6 @@ import {
   uniqueNamesGenerator,
   Config,
   adjectives,
-  colors,
   animals,
 } from "unique-names-generator";
 
@@ -19,7 +18,7 @@ const supabase = createServerComponentClient({ cookies });
 export async function POST(request: Request) {
 
   const randomName: string = uniqueNamesGenerator({
-    dictionaries: [adjectives, colors, animals],
+    dictionaries: [adjectives, animals],
   });
 
   const chat_message_data: chat_message = await request.json();
