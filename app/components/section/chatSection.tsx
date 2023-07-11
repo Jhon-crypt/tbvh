@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { BiShareAlt } from "react-icons/bi"
-
+import ChatForm from "../auth/chatForm";
+import ChatBubbleSection from "./chatBubbleSection";
 
 export default function ChatSection(props:
     {
@@ -43,7 +44,11 @@ export default function ChatSection(props:
                                 </label>
                             </div>
                             
-                            
+                            <ChatForm chatbox_id={props.chatbox_id} />
+
+                            <div className="divider"></div>
+
+                            <ChatBubbleSection chatbox_id={props.chatbox_id} />
 
                         </div>
                     </div>
