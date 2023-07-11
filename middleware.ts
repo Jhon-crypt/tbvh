@@ -13,3 +13,15 @@ export async function middleware(req: NextRequest) {
     return res
 
 }
+
+export const config = {
+
+    matcher : [
+        '/api/chatbox/createChatBox', 
+        '/api/chatbox/fetchChatBoxes', 
+        '/api/chat/createChatMessage',
+        '/home','/profile','/create',
+        '/settings'
+    ]
+
+}
