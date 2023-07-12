@@ -3,7 +3,6 @@
 import Link from "next/link"
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from "react";
-import { truncate } from "fs";
 
 export default function LoginForm() {
 
