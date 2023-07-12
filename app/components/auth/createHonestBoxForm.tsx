@@ -96,7 +96,7 @@ export default function CreateHonestBoxForm() {
 
                         <form onSubmit={handleHonestBox}>
                             <label className="block mb-5">
-                                <textarea id="message" className="p-4 w-full h-48 font-medium text-gray-500 placeholder-gray-500 bg-white bg-opacity-50 outline-none border border-blueGray-200 resize-none rounded-lg focus:ring focus:ring-indigo-300" placeholder="E.g What do you think about me" required></textarea>
+                                <textarea id="message" className="p-4 w-full h-48 font-medium text-gray-500 placeholder-gray-500 bg-white bg-opacity-50 outline-none border border-blueGray-200 resize-none rounded-lg focus:ring focus:ring-indigo-300" placeholder="E.g Ask questions and recieve anonymous answers" required></textarea>
                             </label>
 
                             {loading ?
