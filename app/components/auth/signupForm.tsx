@@ -52,7 +52,7 @@ export default function SignupForm() {
 
                 setSignupError(true)
 
-                console.log("Error while signing Up")
+                console.log(error)
 
             } else {
 
