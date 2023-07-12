@@ -54,7 +54,7 @@ export default function ChatForm(props:
 
                     setAlertStatus(false)
 
-                }
+                }  
 
             } else if (!response.ok) {
 
