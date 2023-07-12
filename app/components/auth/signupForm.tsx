@@ -12,6 +12,8 @@ export default function SignupForm() {
 
     const [signupStatus, setSignupStatus] = React.useState(false)
 
+    const [signupError, setSignupError] = React.useState(false)
+
 
     async function handleSubmit(event: any) {
 
@@ -47,6 +49,8 @@ export default function SignupForm() {
                 setLoading(false)
 
                 setSignupStatus(false)
+
+                setSignupError(true)
 
                 console.log("Error while signing Up")
 
@@ -106,6 +110,25 @@ export default function SignupForm() {
                                 <>
 
                                 </>
+
+                            }
+
+                            {signupError ?
+
+                                <>
+                                
+                                <div onClick={closeAlert} className="bg-error text-white flex rounded-lg p-4 mb-4 text-sm" role="alert">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                        <div>
+                                            <span className="font-medium">Error while signing up.</span>.
+                                        </div>
+                                    </div>
+                                
+                                </>
+
+                                :
+
+                                <></>
 
                             }
                         </>
