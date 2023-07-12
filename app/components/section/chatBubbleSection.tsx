@@ -15,7 +15,7 @@ export default function ChatBubbleSection(props:
     const [loading, setLoading] = useState(false)
 
     const [chats, setChats]: any = useState([])
-
+ 
     useEffect(() => {
 
         async function getChats() {
