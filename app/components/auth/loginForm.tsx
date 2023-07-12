@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from "react";
+import { truncate } from "fs";
 
 export default function LoginForm() {
 
@@ -95,11 +96,11 @@ export default function LoginForm() {
 
                                 <>
 
-                                    <div className="alert alert-error shadow-lg mb-3">
-                                        
-                                            <svg onClick={closeAlert} xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                            <span className="font-medium">Wrong email and password combination.</span>
-                                        
+                                    <div onClick={closeAlert} className="bg-error text-white flex rounded-lg p-4 mb-4 text-sm" role="alert">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                        <div>
+                                            <span className="font-medium">Wrong email and password combination.</span>.
+                                        </div>
                                     </div>
 
                                 </>
@@ -114,12 +115,11 @@ export default function LoginForm() {
 
                                 <>
 
-                                    <div className="alert alert-success shadow-lg mb-3">
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                        <span className="font-medium">Login successful, click <Link className="text-primary" href="/home">here</Link> to continue</span>
-
-
+                                    <div onClick={closeAlert} className="text-white flex rounded-lg p-4 mb-4 text-sm" style={{ backgroundColor: '#22BB33' }} role="alert">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                        <div>
+                                            <span className="font-medium">Login successful, click <Link className="text-primary" href="/home">here</Link> to continue</span>.
+                                        </div>
                                     </div>
 
                                 </>
@@ -180,7 +180,7 @@ export default function LoginForm() {
                 </div>
             </section>
 
-            
+
 
         </>
 

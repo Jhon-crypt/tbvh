@@ -94,15 +94,13 @@ export default function SignupForm() {
                             {signupStatus ?
 
                                 <>
-                                    <div className="alert alert-success shadow-lg mb-3">
-                                        
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                            <span className="font-medium">Signup successful, We have sent a confirmation email to the email address you provided.</span>
-                                        
-                                        <div className="flex-none">
-                                            <button className="btn btn-sm" onClick={closeAlert}>Close</button>
+                                    <div onClick={closeAlert} className="text-white flex rounded-lg p-4 mb-4 text-sm" style={{ backgroundColor: '#22BB33'}} role="alert">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                        <div>
+                                            <span className="font-medium">Signup successful, We have sent a confirmation email to the email address you provided</span>.
                                         </div>
                                     </div>
+
                                 </>
                                 :
                                 <>
