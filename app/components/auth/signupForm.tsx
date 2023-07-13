@@ -14,6 +14,7 @@ export default function SignupForm() {
 
     const [signupError, setSignupError] = React.useState(false)
 
+    const [showPass, setShowPassword] = React.useState(false)
 
     async function handleSubmit(event: any) {
 
@@ -80,7 +81,12 @@ export default function SignupForm() {
         setSignupStatus(false)
 
     }
+    
+    function showPassword() {
 
+        setShowPassword(!showPass)
+
+    }
 
     return (
 
@@ -140,8 +146,9 @@ export default function SignupForm() {
                             <label className="block mb-5">
                                 <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-secondary" id="email" type="text" placeholder="Email Address" required />
                             </label>
-                            <label className="block mb-5">
-                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-accent" id="password" type="password" placeholder="Create Password" required minLength={6} />
+                            <label className="relative block mb-5">
+                                <div onClick={showPassword} className="absolute right-4 top-1/2 transform -translate-y-1/2"><label htmlFor="forgot_password" className="text-sm text-indigo-600 hover:text-indigo-700 font-medium">Show Password</label></div>
+                                <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-accent" id="password" type={showPass ? "text" : "password"} placeholder="Create Password" required minLength={6} />
                             </label>
 
                             <>

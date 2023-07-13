@@ -14,6 +14,7 @@ export default function LoginForm() {
 
     const [redirectAlertStatus, setRedirectAlertStatus] = React.useState(false)
 
+
     async function handleLogin(event: any) {
 
         setLoading(true)
@@ -138,8 +139,7 @@ export default function LoginForm() {
                             <label className="block mb-5">
                                 <input className="px-4 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-primary" id="email" type="email" placeholder="Email address" required />
                             </label>
-                            <label className="relative block mb-5">
-                                <div className="absolute right-4 top-1/2 transform -translate-y-1/2"><label htmlFor="forgot_password" className="text-sm text-indigo-600 hover:text-indigo-700 font-medium">Forgot Password?</label></div>
+                            <label className="block mb-5">
                                 <input className="px-4 pr-36 py-3.5 w-full text-gray-500 font-medium placeholder-gray-500 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-secondary" id="password" type="password" placeholder="Password" required minLength={6} />
                             </label>
 
